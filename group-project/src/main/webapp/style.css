@@ -1,9 +1,5 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
-}
-
-#greeting-container {
-  margin-top: 20px;
+#map {
+    height: 700px;
+    width: 80%;
+    margin: 20px auto
 }
