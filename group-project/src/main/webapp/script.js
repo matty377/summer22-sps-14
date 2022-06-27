@@ -20,7 +20,7 @@ let map;
 
 function initMap(){
 
-    //default location is Google headquarter
+    //default location is Google headquarters
     let location = {
         lat: 37.419857,
         lng: -122.078827
@@ -37,5 +37,31 @@ function initMap(){
         position: location,
         map: map
     });
+
+    if(navigator.geolocation) {
+
+        console.log('Geolocation is supported!');
+
+        navigator.geolocation.getCurrentPosition(
+            (currentPosition) => {
+                location.lat = currentPosition.coords.latitude;
+                location.lng = currentPosition.coords.longitude;
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                
+            },
+            (err) => {
+                console.log('Access to Geolocation is denied!');
+                console.log('Map is centered at default location.');
+                console.log(err.message);
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            }
+        )
+
+    } else {
+        console.log('Geolocation is not supported by the browser!');
+        console.log('Map is centered at default location ');
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
 
 }
