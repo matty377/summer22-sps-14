@@ -33,10 +33,12 @@ function initMap(){
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
-    let marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
+    function createMarker(location, map){
+        let marker = new google.maps.Marker({
+            position: location,
+            map: map
+        })
+    }
 
     if(navigator.geolocation) {
 
@@ -47,6 +49,7 @@ function initMap(){
                 location.lat = currentPosition.coords.latitude;
                 location.lng = currentPosition.coords.longitude;
                 map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                createMarker(location, map);
                 
             },
             (err) => {
@@ -54,7 +57,7 @@ function initMap(){
                 console.log('Map is centered at default location.');
                 console.log(err.message);
                 map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
+                createMarker(location, map);
             }
         )
 
@@ -62,6 +65,7 @@ function initMap(){
         console.log('Geolocation is not supported by the browser!');
         console.log('Map is centered at default location ');
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        createMarker(location, map);
     }
 
 }
