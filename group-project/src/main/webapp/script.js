@@ -32,7 +32,7 @@ function initMap(){
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    
+
     function createMarker(location, map){
         let marker = new google.maps.Marker({
             position: location,
@@ -50,7 +50,7 @@ function initMap(){
                 location.lng = currentPosition.coords.longitude;
                 map = new google.maps.Map(document.getElementById('map'), mapOptions);
                 createMarker(location, map);
-                
+
             },
             (err) => {
                 console.log('Access to Geolocation is denied!');
@@ -68,4 +68,19 @@ function initMap(){
         createMarker(location, map);
     }
 
+}
+
+/**
+ * Adds a food suggestion to the page.
+ */
+function addFoodSuggestion() {
+    const suggestions =
+        ['African', 'American', 'Asian', 'European', 'Central African', 'East African', 'North African', 'South African', 'West African', 'North American', 'Central American', 'South American', 'Caribbean', 'Central Asian', 'East Asian', 'South Asian', 'Southeast Asian', 'West Asian', 'Central European', 'East European', 'North European', 'South European', 'West European', 'Oceanic', 'BBQ', 'Chinese', 'French', 'Hamburger', 'Indian', 'Italian', 'Japanese', 'Mexican', 'Pizza', 'Seafood', 'Steak', 'Sushi', 'Thai'];
+
+    // Pick a food suggestion.
+    const suggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+    // Add food suggestion to the page.
+    const suggestionContainer = document.getElementById('suggestion-container');
+    suggestionContainer.innerText = suggestion;
 }
