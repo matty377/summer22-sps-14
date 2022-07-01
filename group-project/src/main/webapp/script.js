@@ -68,7 +68,17 @@ function initMap(){
         createMarker(location, map);
     }
 
+
+    // Add Autocomplete
+    let autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-input'), {
+        type: ['establishment'],
+        fields: ['geometry', 'name']
+    });
 }
+
+
+
+
 
 /**
  * Adds a food suggestion to the page.
