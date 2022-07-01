@@ -74,6 +74,16 @@ function initMap(){
         type: ['establishment'],
         fields: ['geometry', 'name']
     });
+
+    autocomplete.addListener('place_changed', () => {
+        const place = autocomplete.getPlace();
+        new google.maps.Marker({
+            position: place.geometry.location,
+            label: place.name,
+            map:map
+        })
+    });
+
 }
 
 
