@@ -84,3 +84,20 @@ function addFoodSuggestion() {
     const suggestionContainer = document.getElementById('suggestion-container');
     suggestionContainer.innerText = suggestion;
 }
+
+//Adds restaurants near you list to the page.
+document.addEventListener('DOMContentLoaded', (e) => {
+    let restaurants = [
+{"name" :"Joe’s Seafood", "cost": "2"},
+{"name" : "Le Diplomate", "cost": "3"}];
+let container = document.getElementById("container");
+for (let i = 0; i < restaurants.length; i ++) {
+let rest = document.createElement("div");
+rest.innerHTML = restaurants[i].name + " Cost: ";
+for (let j = 0; j < restaurants[i].cost; j++) {
+  rest.innerHTML += "$";
+}
+container.appendChild(rest);
+}
+});
+

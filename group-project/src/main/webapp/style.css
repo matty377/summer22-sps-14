@@ -3,3 +3,35 @@
     width: 80%;
     margin: 20px auto
 }
+
+/*Map list prototype styling*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+#heading{
+  display: flex;
+  font-family: Roboto;
+  color: #3e4958;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 900;
+  
+}
+
+#container div {
+  display: flex;
+  font-family: Roboto;
+  background-color: #fff;
+  font-weight: 700;
+  color: #3e4958;
+  margin: 1em 30em;
+  padding: 3em 2em;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 1em;
+  transition-duration: 1s;
+}
+
+#container div:hover {
+  background-color: #dee1e6;
+}
+
