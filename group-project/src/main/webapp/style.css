@@ -35,3 +35,16 @@
   background-color: #dee1e6;
 }
 
+#search-input {
+    width: 500px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+
+#input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
