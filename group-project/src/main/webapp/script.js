@@ -26,3 +26,12 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function getRestaurant(){
+    fetch('/get-rest').then(response => response.json()).then((restaurants) => {
+        restaurants.forEach((restaurant) => {
+          //taskListElement.appendChild(createTaskElement(task));
+          console.log(restaurant);
+        })
+      });
+}
