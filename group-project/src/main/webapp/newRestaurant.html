@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
     <title>SPS - Group 14 Project</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Add new restaurant</h1>
     <form method="POST" action="/new-rest">
-        <label for="name">Restaurant Name:</label><br>
-        <input type="text" name="name" id="name" placeholder="name"/><br>
-        <label for="type">Type of food:</label><br>
-        <input type="text" name="type" id="type" placeholder="type"/><br>
-        <label for="location">Location:</label><br>
-        <input type="text" name="location" id="location" placeholder="location" /><br>
-        <label for="cost">Cost(1-10):</label><br>
-        <input type="number" name= "cost" id="cost" placeholder="cost"><br>
-        
-        <button>Submit</button>
+      <label for="name">Restaurant Name:</label><br />
+      <input type="text" name="name" id="name" placeholder="name" /><br />
+      <label for="type">Type of food:</label><br />
+      <input type="text" name="type" id="type" placeholder="type" /><br />
+      <label for="location">Location:</label><br />
+      <input
+        type="text"
+        name="location"
+        id="location"
+        placeholder="location"
+      /><br />
+      <label for="cost">Cost(1-10):</label><br />
+      <input type="number" name="cost" id="cost" placeholder="cost" /><br />
+
+      <button>Submit</button>
     </form>
 
     <button onclick="getRestaurant()">get Restaurant</button>
-</body>
+  </body>
 </html>
