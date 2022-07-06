@@ -68,7 +68,6 @@ function initMap(){
         createMarker(location, map);
     }
 
-
     // Add Autocomplete
     let autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-input'), {
         type: ['establishment'],
@@ -85,10 +84,6 @@ function initMap(){
     });
 
 }
-
-
-
-
 
 /**
  * Adds a food suggestion to the page.
@@ -119,5 +114,13 @@ for (let j = 0; j < restaurants[i].cost; j++) {
 }
 container.appendChild(rest);
 }
-});
 
+function getRestaurant(){
+    fetch('/get-rest').then(response => response.json()).then((restaurants) => {
+        restaurants.forEach((restaurant) => {
+          //taskListElement.appendChild(createTaskElement(task));
+          console.log(restaurant);
+        })
+      });
+}
+});
