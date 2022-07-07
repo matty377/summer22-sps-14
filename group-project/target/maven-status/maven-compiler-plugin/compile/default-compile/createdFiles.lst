@@ -1,5 +1,0 @@
-com\google\sps\data\Restaurant.class
-com\google\sps\ServerMain.class
-com\google\sps\servlets\NewRestServlet.class
-com\google\sps\servlets\GetRestServlet.class
-com\google\sps\servlets\HelloWorldServlet.class
