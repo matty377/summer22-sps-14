@@ -1,5 +1,4 @@
 target/
-/target/
 .classpath
 .idea
 .project
@@ -8,4 +7,3 @@ target/
 log
 .env
 *.env
-/group-project/target/
