@@ -30,9 +30,6 @@ function initMap() {
   };
 
   const mapContainer = document.getElementById('map');
-
-
-
   map = new google.maps.Map(mapContainer, mapOptions);
 
   function createMarker(location, map) {
@@ -78,12 +75,20 @@ function initMap() {
 
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
-    location = place.geometry.location;
-    map = new google.maps.Map(mapContainer, {
-        center: location,
-        zoom: 14
-    });
-    createMarker(location,map);
+
+    //when user enters a location that is not suggested by autocomplete
+    //or autocomplete fails to get a place
+    if(!place.geometry){
+        alert(`No details available for input: '${place.name}'\n
+                Please select a location from the dropdown!`);
+    } else {
+        location = place.geometry.location;
+        map = new google.maps.Map(mapContainer, {
+                center: location,
+                zoom: 14
+        });
+        createMarker(location,map);
+    }
   });
 }
 
