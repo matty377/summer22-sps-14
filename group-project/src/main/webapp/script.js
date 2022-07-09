@@ -26,8 +26,10 @@ function initMap() {
 
   let mapOptions = {
     center: location,
-    zoom: 9,
+    zoom: 14
   };
+
+
 
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
