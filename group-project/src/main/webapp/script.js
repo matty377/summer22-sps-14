@@ -78,11 +78,12 @@ function initMap() {
 
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
-    new google.maps.Marker({
-      position: place.geometry.location,
-      label: place.name,
-      map: map,
+    location = place.geometry.location;
+    map = new google.maps.Map(mapContainer, {
+        center: location,
+        zoom: 14
     });
+    createMarker(location,map);
   });
 }
 
