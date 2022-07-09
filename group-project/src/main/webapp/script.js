@@ -29,9 +29,11 @@ function initMap() {
     zoom: 14
   };
 
+  const mapContainer = document.getElementById('map');
 
 
-  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  map = new google.maps.Map(mapContainer, mapOptions);
 
   function createMarker(location, map) {
     let marker = new google.maps.Marker({
@@ -47,21 +49,21 @@ function initMap() {
       (currentPosition) => {
         location.lat = currentPosition.coords.latitude;
         location.lng = currentPosition.coords.longitude;
-        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(mapContainer, mapOptions);
         createMarker(location, map);
       },
       (err) => {
         console.log("Access to Geolocation is denied!");
         console.log("Map is centered at default location.");
         console.log(err.message);
-        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(mapContainer, mapOptions);
         createMarker(location, map);
       }
     );
   } else {
     console.log("Geolocation is not supported by the browser!");
     console.log("Map is centered at default location ");
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    map = new google.maps.Map(mapContainer, mapOptions);
     createMarker(location, map);
   }
 
