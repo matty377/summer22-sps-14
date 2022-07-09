@@ -74,6 +74,13 @@ function initMap() {
 
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
+
+    //when the user enter a location that is not sugggested by autocomplete
+    //or when autocomplete fails.
+    if(!place.geometry){
+        alert(`No details available for input: ${place.name}'`);
+    }
+
     new google.maps.Marker({
       position: place.geometry.location,
       label: place.name,
