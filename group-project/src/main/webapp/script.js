@@ -26,10 +26,11 @@ function initMap() {
 
   let mapOptions = {
     center: location,
-    zoom: 9,
+    zoom: 14
   };
 
-  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  const mapContainer = document.getElementById('map');
+  map = new google.maps.Map(mapContainer, mapOptions);
 
   function createMarker(location, map) {
     let marker = new google.maps.Marker({
@@ -45,21 +46,21 @@ function initMap() {
       (currentPosition) => {
         location.lat = currentPosition.coords.latitude;
         location.lng = currentPosition.coords.longitude;
-        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(mapContainer, mapOptions);
         createMarker(location, map);
       },
       (err) => {
         console.log("Access to Geolocation is denied!");
         console.log("Map is centered at default location.");
         console.log(err.message);
-        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(mapContainer, mapOptions);
         createMarker(location, map);
       }
     );
   } else {
     console.log("Geolocation is not supported by the browser!");
     console.log("Map is centered at default location ");
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    map = new google.maps.Map(mapContainer, mapOptions);
     createMarker(location, map);
   }
 
@@ -74,11 +75,20 @@ function initMap() {
 
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
-    new google.maps.Marker({
-      position: place.geometry.location,
-      label: place.name,
-      map: map,
-    });
+
+    //when user enters a location that is not suggested by autocomplete
+    //or autocomplete fails to get a place
+    if(!place.geometry){
+        alert(`No details available for input: '${place.name}'\n
+                Please select a location from the dropdown!`);
+    } else {
+        location = place.geometry.location;
+        map = new google.maps.Map(mapContainer, {
+                center: location,
+                zoom: 14
+        });
+        createMarker(location,map);
+    }
   });
 }
 
