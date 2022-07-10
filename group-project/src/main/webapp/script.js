@@ -26,7 +26,7 @@ function initMap() {
 
   let mapOptions = {
     center: location,
-    zoom: 14
+    zoom: 12
   };
 
   const mapContainer = document.getElementById('map');
@@ -88,11 +88,47 @@ function initMap() {
         location = place.geometry.location;
         map = new google.maps.Map(mapContainer, {
                 center: location,
-                zoom: 14
+                zoom: 12
         });
         createMarker(location,map);
     }
   });
+
+  const keywordInput = document.getElementById('keyword');
+  keywordInput.addEventListener('change', (e) => {
+      e.preventDefault();
+      map = new google.maps.Map(mapContainer, {
+          center: location,
+          zoom: 12
+      });
+      createMarker(location,map);
+
+      //create PlacesService object to use nearbySearch
+      let request = {
+          location: location,
+          radius: '5000',
+          type: 'restaurant'
+      };
+      request.keyword = keywordInput.value;
+      let service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+  });
+
+}
+
+//callback function passed into nearbySearch
+
+function callback(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK){
+        let qty = Math.min(3,results.length);
+        for(let i = 0; i < qty; i++ ){
+            let marker = new google.maps.Marker({
+                position: results[i].geometry.location,
+                map: map,
+                label: results[i].name,
+            })
+        }
+    }
 }
 
 /**
