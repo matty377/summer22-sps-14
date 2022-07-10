@@ -32,10 +32,13 @@ function initMap() {
   const mapContainer = document.getElementById('map');
   map = new google.maps.Map(mapContainer, mapOptions);
 
+  const img = "https://img.icons8.com/plasticine/100/000000/user-location.png";
+
   function createMarker(location, map) {
     let marker = new google.maps.Marker({
       position: location,
       map: map,
+      icon: img
     });
   }
 
