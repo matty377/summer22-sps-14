@@ -40,6 +40,15 @@
         <li><img src="img/img3.png" alt="food3" onclick="imgSlider('img/img3.png')"></li>
     </ul>
 
+    <!-- Food Suggestion -->
+    <div class="suggestion">
+        <h2>What should we eat?</h2>
+        <p>Click this button for a suggestion.</p>
+        <button onclick="addFoodSuggestion()">Suggestion</button>
+        <div id="suggestion-container"></div>
+    </div>
+    
+
     <!-- Map -->
     <div id="input-container">
       <span style="color:white"><i class="fa-solid fa-street-view fa-xl" id="location-icon"></i></span>
@@ -51,12 +60,6 @@
     <div id="map"></div>
     <p><a href="/newRestaurant.html">add restaurant</a></p>
 
-    <!-- Food Suggestion -->
-    <h2><span>What should we eat?</span></h2>
-    <p>Click this button for a suggestion.</p>
-    <button onclick="addFoodSuggestion()">Suggestion</button>
-    <div id="suggestion-container"></div>
-
     <!--List map protoype html-->
     <div id="heading">
       <p>Restaurants Near You</p>
@@ -66,7 +69,7 @@
 
     <!-- Js -->
     <script src="script.js"></script>
-    
+
     <!-- Google Map API Bootstrap -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1BtUCEK4iO1NVWK_E6gPqZzd-XgktYQs&libraries=places&callback=initMap"
