@@ -81,6 +81,28 @@ a {
     text-align:center;
 }
 
+#suggestion-btn {
+    background-color: transparent;
+    border: 2px solid;
+    color: #EA7C69;
+    padding: 1em 2em;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    display: inline-block;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+#suggestion-btn:hover{
+    border-color: #f1ff5c;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+    transform: translateY(-0.3em);
+}
+
+
+
 /*Map list prototype styling*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
