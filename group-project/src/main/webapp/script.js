@@ -131,6 +131,12 @@ function callback(results, status){
     }
 }
 
+  //imgSlider for thumbnail
+
+function imgSlider(link) {
+    document.querySelector('.food').src = link;
+}
+
 /**
  * Adds a food suggestion to the page.
  */
