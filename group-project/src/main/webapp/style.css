@@ -47,6 +47,28 @@ a {
     font-weight: 900;
 }
 
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail li {
+    list-style: none;
+    display: inline-block;
+    margin: 3.5em;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.thumbnail li:hover {
+    transform: translateY(-20px);
+}
+
+.thumbnail li img {
+    max-width: 100px;
+}
+
 /* Map */
 #map {
   height: 700px;
