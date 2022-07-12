@@ -179,6 +179,18 @@ function addFoodSuggestion() {
     "Steak",
     "Sushi",
     "Thai",
+    "Noodles",
+    "Dumplings",
+    "Chicken",
+    "Tacos",
+    "Pasta",
+    "Burger",
+    "Sandwich",
+    "Hotpot",
+    "Salad",
+    "BBQ Chicken",
+    "Lobster Rolls",
+    "Tuna casserole",
   ];
 
   // Pick a food suggestion.
