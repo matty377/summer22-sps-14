@@ -131,6 +131,12 @@ function callback(results, status){
     }
 }
 
+  //imgSlider for thumbnail
+
+function imgSlider(link) {
+    document.querySelector('.food').src = link;
+}
+
 /**
  * Adds a food suggestion to the page.
  */
@@ -173,6 +179,18 @@ function addFoodSuggestion() {
     "Steak",
     "Sushi",
     "Thai",
+    "Noodles",
+    "Dumplings",
+    "Chicken",
+    "Tacos",
+    "Pasta",
+    "Burger",
+    "Sandwich",
+    "Hotpot",
+    "Salad",
+    "BBQ Chicken",
+    "Lobster Rolls",
+    "Tuna casserole",
   ];
 
   // Pick a food suggestion.
