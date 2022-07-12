@@ -7,6 +7,7 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/71959eee97.js"
@@ -42,13 +43,15 @@
 
     <!-- Food Suggestion -->
     <div class="suggestion">
-        <h2>What should we eat?</h2>
-        <p>Click this button for a suggestion.</p>
+        <h2>What Should We Eat?</h2>
+        <p style="color:#D9D9D9">Click this button for a suggestion.</p>
         <button id="suggestion-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
         <div id="suggestion-container"></div>
     </div>
     
     <!-- Map -->
+    <h2>Where Should We Eat?</h2>
+    <p style="color:#D9D9D9 ;text-align:center">Enter your location and a keyword below to search for 3 nearby restaurants.</p>
     <div id="input-container">
       <span style="color:white"><i class="fa-solid fa-street-view fa-xl" id="location-icon"></i></span>
       <input type="text" placeholder="Enter your location" id="search-input" />
@@ -64,7 +67,6 @@
       <p>Restaurants Near You</p>
     </div>
     <div id="container"></div>
-
 
     <!-- Js -->
     <script src="script.js"></script>
