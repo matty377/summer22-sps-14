@@ -115,8 +115,9 @@ function initMap() {
       request.keyword = keywordInput.value;
       let service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
+      keywordInput.value = '';
   });
-
+  
 }
 
 //callback function passed into nearbySearch
