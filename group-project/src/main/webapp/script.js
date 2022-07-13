@@ -117,18 +117,47 @@ function initMap() {
 }
 
 //callback function passed into nearbySearch
-
 function callback(results, status){
     if (status == google.maps.places.PlacesServiceStatus.OK){
+        let currentInfoWindow = null;
         let qty = Math.min(3,results.length);
         for(let i = 0; i < qty; i++ ){
+            let result = results[i];
+            let contentString = 
+                `<div style="color:black">`+
+                `<h3>${result.name}</h3>` +
+                `<p>Address: ${result.vicinity}</p>` +
+                `<p>Price Level: ${result.price_level}/4</p>` +
+                `<p>Rating: ${result.rating}/5 </p>`+
+                `</div>`;
+            let infoWindow = new google.maps.InfoWindow({
+                content: contentString
+            });
             let marker = new google.maps.Marker({
-                position: results[i].geometry.location,
+                position: result.geometry.location,
                 map: map,
-                label: results[i].name,
-            })
+                label: result.name,
+            });
+            marker.addListener('click',() => {
+                if (currentInfoWindow != null){
+                    currentInfoWindow.close();
+                };
+                infoWindow.open({
+                    anchor: marker,
+                    map,
+                    shouldFocus: false,
+                });
+                currentInfoWindow = infoWindow;
+            });
+            
         }
     }
+}
+
+  //imgSlider for thumbnail
+
+function imgSlider(link) {
+    document.querySelector('.food').src = link;
 }
 
 /**
@@ -173,6 +202,18 @@ function addFoodSuggestion() {
     "Steak",
     "Sushi",
     "Thai",
+    "Noodles",
+    "Dumplings",
+    "Chicken",
+    "Tacos",
+    "Pasta",
+    "Burger",
+    "Sandwich",
+    "Hotpot",
+    "Salad",
+    "BBQ Chicken",
+    "Lobster Rolls",
+    "Tuna casserole",
   ];
 
   // Pick a food suggestion.
