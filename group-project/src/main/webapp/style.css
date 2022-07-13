@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     height: 100%;
+    width: 100%;
 }
 
 /* Header */
@@ -74,7 +75,7 @@ a {
 #map {
   height: 600px;
   width: 70%;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .suggestion{
