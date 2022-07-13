@@ -1,3 +1,4 @@
+#!/bin/sh
 #!/bin/bash
 # Requires: python3, pip3.
 #

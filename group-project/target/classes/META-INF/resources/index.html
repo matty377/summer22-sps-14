@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>SPS - Group 14 Project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/71959eee97.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div id="content">
-      <h1>SPS - Group 14 Project</h1>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <h1>Google Map Demo</h1>
 
-      <p><a href="/newRestaurant.html">add restaurant</a></p>
-      <p><a href="/home.html">Landing Page</a></p>
+    <div id="input-container">
+      <span><i class="fa-solid fa-street-view fa-xl" id="location-icon"></i></span>
+      <input type="text" placeholder="Enter your location" id="search-input" />
+      <span><i class="fa-solid fa-face-smile-wink fa-xl"></i></span>
+      <input type="text" id="keyword" placeholder="Enter a keyword">
     </div>
+
+    <div id="map"></div>
+    <p><a href="/newRestaurant.html">add restaurant</a></p>
+
+    <h2><span>What should we eat?</span></h2>
+    <p>Click this button for a suggestion.</p>
+    <button onclick="addFoodSuggestion()">Suggestion</button>
+    <div id="suggestion-container"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1BtUCEK4iO1NVWK_E6gPqZzd-XgktYQs&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <!--List map protoype html-->
+    <div id="heading">
+      <p>Restaurants Near You</p>
+    </div>
+    <div id="container"></div>
   </body>
 </html>
