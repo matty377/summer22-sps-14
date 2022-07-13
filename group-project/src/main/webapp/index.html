@@ -68,6 +68,34 @@
     </div>
     <div id="container"></div>
 
+      <!--Comment Form-->
+      <h1 id="commentHeading">Comment Form</h1>
+      <div id="commentContainer">
+      <form action="/comments" method="POST">
+          <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input name="name" type="text" class="form-control"
+                     id="name" aria-describedby="name">
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input name="email" type="email"
+                     class="form-control"
+                     id="email"
+                     aria-describedby="email">
+          </div>
+          <div class="mb-3">
+              <label for="comment" class="form-label">Comment
+              </label>
+              <input name="comment" type="text"
+                     class="form-control"
+                     id="comment" aria-describedby="comment">
+          </div>
+          <button type="submit" class="btn btn-success">Submit
+          </button>
+      </form>
+      </div>
+
     <!-- Js -->
     <script src="script.js"></script>
 

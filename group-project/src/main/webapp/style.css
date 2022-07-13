@@ -111,7 +111,7 @@ h2 {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
-#heading {
+#heading, #commentHeading {
   display: flex;
   font-family: Roboto;
   /* color: #3e4958; */
@@ -120,7 +120,7 @@ h2 {
   font-weight: 900;
 }
 
-#container div {
+#container div{
   display: flex;
   font-family: Roboto;
   background-color: #fff;
@@ -135,6 +135,15 @@ h2 {
 
 #container div:hover {
   background-color: #dee1e6;
+}
+
+#commentContainer{
+    font-family: Roboto;
+    background-color: #fff;
+    font-weight: 700;
+    color: #3e4958;
+    margin: 1em 30em;
+    padding: 3em 2em;
 }
 
 input {
