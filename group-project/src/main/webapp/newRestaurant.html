@@ -7,23 +7,23 @@
     <title>SPS - Group 14 Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="newRestaurant.css">
   </head>
   <body>
-    <h1>Add new restaurant</h1>
     <div class="row">
-        <h1 class="text-center">New restaurant</h1>
+        <h1 class="text-center" style="padding-top: 1.5em">New restaurant</h1>
         <div class="col-md-6 offset-md-3">
             <form action="/new-rest" method='POST' novalidate class="validated-form">
                 <div class="mb-3">
                     <label class="form-label" for="title">Restaurant Name: </label>
-                    <input class="form-control" type="text" id='name' name='name' required>
+                    <input  class="form-control" type="text" id='name' name='name' required>
                     <div class="valid-feedback">
                         looks good!
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="type">Type of Food: </label>
-                    <input class="form-control" type="text" id='type' name='type'  required>
+                    <input  class="form-control" type="text" id='type' name='type'  required>
                     <div class="valid-feedback">
                         looks good!
                     </div>
@@ -43,14 +43,18 @@
                         looks good!
                     </div>
                 </div>
-
-                <div class="mb-3">
-                    <button class="btn btn-success">Add restaurant</button>
+                
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <button class="btn" style="background-color: #1F1D2B; border-color: #EA7C69; color: #EA7C69;">Add restaurant</button>
+                    </div>
                 </div>
+                
+
+                
             </form>
+            
         </div>
     </div>
-
-    <button onclick="getRestaurant()">get Restaurant</button>
   </body>
 </html>
