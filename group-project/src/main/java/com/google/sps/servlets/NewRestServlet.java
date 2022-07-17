@@ -24,7 +24,12 @@ public class NewRestServlet extends HttpServlet {
     String type = Jsoup.clean(request.getParameter("type"), Whitelist.none());
     String location = Jsoup.clean(request.getParameter("location"), Whitelist.none());
     String cost = request.getParameter("cost");
+    String latitude = request.getParameter("latitude");
+    String longitude = request.getParameter("longitude");
+
+
     
+
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Restaurant");
@@ -34,6 +39,8 @@ public class NewRestServlet extends HttpServlet {
             .set("type", type)
             .set("location", location)
             .set("cost", cost)
+            .set("latitude", latitude)
+            .set("longitude", longitude)
             .build();
     datastore.put(taskEntity);
 

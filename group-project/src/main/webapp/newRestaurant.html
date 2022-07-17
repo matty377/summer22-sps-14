@@ -1,60 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
     <title>SPS - Group 14 Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="newRestaurant.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/71959eee97.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+      <!-- Header -->
+    <div class="header">
+        <a href="index.html">
+            <img src="img/WTElogo.png" alt="logo" id="logo-img">
+        </a>
+    </div>
+
+    
     <div class="row">
-        <h1 class="text-center" style="padding-top: 1.5em">New restaurant</h1>
+        <h1 class="text-center">New restaurant</h1>
         <div class="col-md-6 offset-md-3">
             <form action="/new-rest" method='POST' novalidate class="validated-form">
                 <div class="mb-3">
                     <label class="form-label" for="title">Restaurant Name: </label>
                     <input  class="form-control" type="text" id='name' name='name' required>
-                    <div class="valid-feedback">
-                        looks good!
-                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="type">Type of Food: </label>
                     <input  class="form-control" type="text" id='type' name='type'  required>
-                    <div class="valid-feedback">
-                        looks good!
-                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="location">Location:</label>
-                    <input class="form-control" type="text" id='location' name='location' required>
-                    <div class="valid-feedback">
-                        looks good!
-                    </div>
+                    <input class="form-control" type="text" id='search-input' name='location' required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="cost">Cost(1-10):</label>
                     <input class="form-control" type="number" id='cost' name='cost' required>
-                    <div class="valid-feedback">
-                        looks good!
-                    </div>
                 </div>
+                    <input class="form-control" type="hidden" id='latitude' name='latitude' required>
+                    <input class="form-control" type="hidden" id='longitude' name='longitude' required>
+
+                <div id="map"></div>
+
                 
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto">
-                        <button class="btn" style="background-color: #1F1D2B; border-color: #EA7C69; color: #EA7C69;">Add restaurant</button>
+                        <button onclick="getLatLon();" class="btn" style="background-color: #1F1D2B; border-color: #EA7C69; color: #EA7C69;">Add restaurant</button>
                     </div>
                 </div>
                 
 
                 
             </form>
+            <button onclick="getLatLon();"></button>
             
         </div>
     </div>
+    
+    <!-- Map -->
+    
+
+    
+
+    
+
+    <!-- Js -->
+    <script src="scriptNewRest.js"></script>
+
+    <!-- Google Map API Bootstrap -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1BtUCEK4iO1NVWK_E6gPqZzd-XgktYQs&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
   </body>
 </html>
