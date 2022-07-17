@@ -28,7 +28,7 @@ a {
 }
 
 .food {
-    width: 450px;
+    width: 18.75rem;
 }
 
 .hero .textBox h1 {
@@ -50,7 +50,6 @@ a {
 
 /* Thumbnail */
 .thumbnail {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -58,7 +57,7 @@ a {
 .thumbnail li {
     list-style: none;
     display: inline-block;
-    margin: 3.5em;
+    margin: 1em;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -68,7 +67,7 @@ a {
 }
 
 .thumbnail li img {
-    max-width: 100px;
+    max-width: 6.25rem;
 }
 
 /* Map */
@@ -138,8 +137,6 @@ h2 {
     color: white !important;
 }
 
-
-
 /*Map list prototype styling*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
@@ -153,32 +150,18 @@ h2 {
   font-weight: 900;
 }
 
-#container div {
-  display: flex;
+#featured {
   font-family: Roboto;
   background-color: #fff;
   font-weight: 700;
   color: #3e4958;
-  margin: 1em 30em;
-  padding: 3em 2em;
+  margin: 1rem 1rem;
+  padding: 1rem 1rem;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 1em;
   transition-duration: 1s;
 }
 
-#container div:hover {
+#featured div:hover {
   background-color: #dee1e6;
-}
-
-input {
-  width: 300px;
-  height: 30px;
-  margin: 15px 30px 15px 10px ;
-}
-
-#input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
 }
