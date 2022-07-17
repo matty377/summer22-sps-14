@@ -157,3 +157,30 @@ h2 {
 #featured div:hover {
   background-color: #dee1e6;
 }
+
+input {
+  width: 300px;
+  height: 30px;
+  margin: 15px 30px 15px 10px ;
+}
+
+#input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Media Queries */
+@media (min-width:700px) and (max-width: 1024px) {
+    .food {
+        width: 300px;
+    }
+
+    .hero .textBox h1 {
+        font-size: 2.5em;
+        Line-height: 1em;
+        font-weight: 500;
+        margin: 25px 0;
+    }
+}
