@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>SPS - Group 14 Project</title>
     <link rel="stylesheet" href="style.css" />
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <ul class="thumbnail"> 
+    <ul class="thumbnail">
         <li><img src="img/img1.png" alt="food1" onclick="imgSlider('img/img1.png')"></li>
         <li><img src="img/img2.png" alt="food2" onclick="imgSlider('img/img2.png')"></li>
         <li><img src="img/img3.png" alt="food3" onclick="imgSlider('img/img3.png')"></li>
@@ -48,7 +48,7 @@
         <button id="suggestion-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
         <div id="suggestion-container" style="font-family: 'Playfair Display', sans-serif; letter-spacing: 1.5px; color: #EA7C69; font-size: 2em"></div>
     </div>
-    
+
     <!-- Map -->
     <h2>Where Should We Eat?</h2>
     <p style="color:#D9D9D9 ;text-align:center">Enter your location and a keyword below to search for 3 nearby restaurants.</p>
@@ -72,6 +72,34 @@
 
     <!-- Register a new restaurant -->
     <p><a href="/newRestaurant.html">add restaurant</a></p>
+
+      <!--Feedback-->
+      <h1>Enjoying Our App?</h1>
+      <div>
+        <form action="/feedback" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control"
+                   id="name" aria-describedby="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input name="email" type="email"
+                   class="form-control"
+                   id="email"
+                   aria-describedby="email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message
+            </label>
+            <input name="message" type="text"
+                   class="form-control"
+                   id="message" aria-describedby="message">
+          </div>
+          <button type="submit" class="btn btn-success">Submit
+          </button>
+        </form>
+      </div>
 
     <!-- Js -->
     <script src="script.js"></script>
