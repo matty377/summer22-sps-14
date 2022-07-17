@@ -103,6 +103,9 @@ function initMap() {
       });
       createMarker(location,map);
 
+      let restContainer = document.getElementById('restaurants-cont');
+      restContainer.innerHTML = '<h2>Restaurants Near You </h2>';
+
       //create PlacesService object to use nearbySearch
       let request = {
           location: location,
@@ -112,8 +115,9 @@ function initMap() {
       request.keyword = keywordInput.value;
       let service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
+      keywordInput.value = '';
   });
-
+  
 }
 
 //callback function passed into nearbySearch
@@ -149,6 +153,17 @@ function callback(results, status){
                 });
                 currentInfoWindow = infoWindow;
             });
+
+            //display Restaurants
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('restaurant');
+            document.querySelector('#restaurants-cont').appendChild(newDiv);
+            let img = document.createElement('img');
+            img.src = result.photos[0].getUrl();
+            newDiv.appendChild(img);
+            let infoBox = document.createElement('div');
+            infoBox.innerHTML = contentString;
+            newDiv.appendChild(infoBox);
             
         }
     }

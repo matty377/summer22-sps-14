@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     height: 100%;
+    width: 100%;
 }
 
 /* Header */
@@ -47,6 +48,7 @@ a {
     font-weight: 900;
 }
 
+/* Thumbnail */
 .thumbnail {
     display: flex;
     justify-content: center;
@@ -71,9 +73,9 @@ a {
 
 /* Map */
 #map {
-  height: 700px;
-  width: 80%;
-  margin: 20px auto;
+  height: 600px;
+  width: 70%;
+  margin: 30px auto;
 }
 
 .suggestion{
@@ -106,6 +108,37 @@ h2 {
     font-family: 'Playfair Display', sans-serif;
     letter-spacing: 2px;
 }
+
+/* Restaurants Container */
+.restaurant {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    /* color: white !important; */
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    width: 60%;
+    margin: 30px auto;
+    transition: all 0.3s;
+}
+
+.restaurant:hover {
+    background-color: #393C49;
+    transform: translateY(-10px);
+}
+
+#restaurants-cont img {
+    width: 12em;
+    height: 12em;
+    margin: 2em;
+}
+
+.restaurant div div {
+    color: white !important;
+}
+
+
 
 /*Map list prototype styling*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
