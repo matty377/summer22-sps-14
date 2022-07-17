@@ -51,7 +51,7 @@
     <div class="suggestion">
         <h2>What Should We Eat?</h2>
         <p style="color:#D9D9D9">Click this button for a suggestion.</p>
-        <button id="suggestion-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
+        <button class="big-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
         <div id="suggestion-container" style="font-family: 'Playfair Display', sans-serif; letter-spacing: 1.5px; color: #EA7C69; font-size: 2em"></div>
     </div>
 
@@ -71,17 +71,21 @@
     <div id="restaurants-cont"></div>
 
     <!-- List map protoype html-->
-    <div id="heading">
-      <p>Featured Restaurants</p>
-    </div>
+    <h2>Featured Restaurants</h2>
+   
     <div id="container"></div>
 
     <!-- Register a new restaurant -->
-    <p><a href="/newRestaurant.html">add restaurant</a></p>
-
-      <!--Feedback-->
-      <div class="container">
-        <h1>Enjoying Our App?</h1>
+    <!-- <p><a href="/newRestaurant.html">add restaurant</a></p> -->
+    <div style="margin: 50px 0; text-align:center">
+        <h2>Think of something different?</h2>
+        <p style="color:#D9D9D9">Click the button below to add your favorite restaurant!</p>
+        <button class="big-btn" onclick="window.location.href='/newRestaurant.html'">ADD RESTAURANT</button>
+    </div>
+        
+    <!--Feedback-->
+      <div class="container" style="width: 60%">
+        <h2>Enjoying Our App?</h2>
         <form action="/feedback" method="POST">
           <div class="form-group">
             <label for="name" class="form-label">Name</label>

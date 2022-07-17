@@ -16,7 +16,7 @@ a {
 #logo-img {
     position: relative;
     width: 100px;
-    padding: 30px;
+    margin: 20px;
 }
 /* Hero */
 .hero {
@@ -83,7 +83,7 @@ a {
     text-align:center;
 }
 
-#suggestion-btn {
+.big-btn {
     background-color: transparent;
     border: 2px solid;
     color: #EA7C69;
@@ -96,7 +96,7 @@ a {
     transition: all 0.3s;
 }
 
-#suggestion-btn:hover{
+.big-btn:hover{
     border-color: #f1ff5c;
     color: white;
     box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
@@ -143,15 +143,6 @@ h2 {
 /*Map list prototype styling*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
-
-#heading {
-  display: flex;
-  font-family: Roboto;
-  /* color: #3e4958; */
-  justify-content: center;
-  font-size: 36px;
-  font-weight: 900;
-}
 
 #container div {
   display: flex;
