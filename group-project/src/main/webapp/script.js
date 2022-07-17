@@ -137,6 +137,9 @@ function initMap() {
       });
       createMarker(location,map);
 
+      let restContainer = document.getElementById('restaurants-cont');
+      restContainer.innerHTML = '<h2>Restaurants Near You </h2>';
+
       //create PlacesService object to use nearbySearch
       let request = {
           location: location,
@@ -148,10 +151,10 @@ function initMap() {
       service.nearbySearch(request, callback);
 
       getRestP(keywordInput.value, location);
-
+      keywordInput.value = '';
     
   });
-
+  
 }
 
 //callback function passed into nearbySearch
@@ -187,6 +190,17 @@ function callback(results, status){
                 });
                 currentInfoWindow = infoWindow;
             });
+
+            //display Restaurants
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('restaurant');
+            document.querySelector('#restaurants-cont').appendChild(newDiv);
+            let img = document.createElement('img');
+            img.src = result.photos[0].getUrl();
+            newDiv.appendChild(img);
+            let infoBox = document.createElement('div');
+            infoBox.innerHTML = contentString;
+            newDiv.appendChild(infoBox);
             
         }
     }
@@ -269,7 +283,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     { name: "Joe’s Seafood", cost: "2" },
     { name: "Le Diplomate", cost: "3" },
   ];
-  let container = document.getElementById("container");
+  let container = document.getElementById("featured");
   for (let i = 0; i < restaurants.length; i++) {
     let rest = document.createElement("div");
     rest.innerHTML = restaurants[i].name + " Cost: ";
