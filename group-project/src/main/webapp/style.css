@@ -178,9 +178,10 @@ input {
 }
 
 /* Media Queries */
-@media (min-width:700px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .food {
         width: 300px;
+        margin: auto;
     }
 
     .hero .textBox h1 {
@@ -188,5 +189,14 @@ input {
         Line-height: 1em;
         font-weight: 500;
         margin: 25px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .textBox {
+        text-align: center;
+    }
+    .thumbnail li {
+        margin: 1em;
     }
 }
