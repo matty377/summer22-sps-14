@@ -117,10 +117,11 @@ h2 {
     align-items: center;
     background-color: transparent;
     /* color: white !important; */
-    border: 0.0625rem solid #D9D9D9;
-    border-radius: 0.94rem;
-    width: 70%;
-    margin: 1.5rem auto;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 65%;
+    margin: 30px auto;
+    padding: 10px;
     transition: all 0.3s;
 }
 
@@ -193,4 +194,19 @@ input {
     .thumbnail li {
         margin: 1em;
     }
+
+    #restaurants-cont img {
+        width: 7em;
+        height: 7em;
+        margin: 20px;
+    }
+
+    #restaurants-cont div {
+        font-size: x-small;
+    }
+
+    #restaurants-cont div h3 {
+        font-size: small;
+    }
+
 }
