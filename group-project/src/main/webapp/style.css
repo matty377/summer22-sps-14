@@ -182,7 +182,7 @@ input {
 @media (max-width: 1024px) {
     .food {
         width: 300px;
-        margin: auto;
+        margin: 30px auto;
     }
 
     .hero .textBox h1 {
