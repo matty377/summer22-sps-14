@@ -151,7 +151,9 @@ h2 {
   background-color: #fff;
   font-weight: 700;
   color: #3e4958;
-  margin: 1em 30em;
+  text-align: center;
+  width: 50%;
+  margin: 1em auto;
   padding: 3em 2em;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 1em;
