@@ -95,6 +95,21 @@ a {
     transition: all 0.3s;
 }
 
+.suggestion-btnNew {
+    background-color: transparent;
+    border: 2px solid;
+    color: #EA7C69;
+    padding: 1em 2em;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    display: inline-block;
+    margin: 20px 0;
+    transition: all 0.3s;
+    text-align:center;
+    style: inline-block;
+}
+
 #suggestion-btn:hover{
     border-color: #f1ff5c;
     color: white;

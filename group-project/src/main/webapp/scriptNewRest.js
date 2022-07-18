@@ -151,71 +151,8 @@ function imgSlider(link) {
     document.querySelector('.food').src = link;
 }
 
-/**
- * Adds a food suggestion to the page.
- */
-function addFoodSuggestion() {
-  const suggestions = [
-    "African",
-    "American",
-    "Asian",
-    "European",
-    "Central African",
-    "East African",
-    "North African",
-    "South African",
-    "West African",
-    "North American",
-    "Central American",
-    "South American",
-    "Caribbean",
-    "Central Asian",
-    "East Asian",
-    "South Asian",
-    "Southeast Asian",
-    "West Asian",
-    "Central European",
-    "East European",
-    "North European",
-    "South European",
-    "West European",
-    "Oceanic",
-    "BBQ",
-    "Chinese",
-    "French",
-    "Hamburger",
-    "Indian",
-    "Italian",
-    "Japanese",
-    "Mexican",
-    "Pizza",
-    "Seafood",
-    "Steak",
-    "Sushi",
-    "Thai",
-    "Noodles",
-    "Dumplings",
-    "Chicken",
-    "Tacos",
-    "Pasta",
-    "Burger",
-    "Sandwich",
-    "Hotpot",
-    "Salad",
-    "BBQ Chicken",
-    "Lobster Rolls",
-    "Tuna casserole",
-  ];
 
-  // Pick a food suggestion.
-  const suggestion =
-    suggestions[Math.floor(Math.random() * suggestions.length)];
-
-  // Add food suggestion to the page.
-  const suggestionContainer = document.getElementById("suggestion-container");
-  suggestionContainer.innerText = suggestion;
-}
-
+//this functions gets Latitude and Longitude from the location entered
 
 function getLatLon(){
     let txt = document.getElementById("search-input").value;

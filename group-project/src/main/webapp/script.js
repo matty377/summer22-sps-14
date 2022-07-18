@@ -118,10 +118,28 @@ function initMap() {
         }
       }).then((response) => response.json())
       .then((restaurants) => {
+        if(restaurants){
+            let restContainer = document.getElementById('DSrestaurants-cont');
+            restContainer.innerHTML = '<h2>User Suggested Restaurants Near You</h2>';
+        }
         restaurants.forEach((restaurant) => {
             //If the restaurant is in bounds it will be showed
             if(bounds.contains(new google.maps.LatLng(restaurant.latitude,restaurant.longitude))){
                 console.log(restaurant);
+
+                //Add DataStore restaurant to the container if its in bounds
+                let contentString = `<div style="color:black">`+
+                `<h3>${restaurant.name}</h3>` +
+                `<p>Address: ${restaurant.location}</p>` +
+                `<p>Price Level: ${restaurant.cost}/10</p>` +
+                `<p>Type: ${restaurant.type} </p>`+
+                `</div>`;
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('restaurant');
+                document.querySelector('#DSrestaurants-cont').appendChild(newDiv);
+                let infoBox = document.createElement('div');
+                infoBox.innerHTML = contentString;
+                newDiv.appendChild(infoBox);
             }
         });
       });
