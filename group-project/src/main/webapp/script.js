@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     { name: "Joe’s Seafood", cost: "2" },
     { name: "Le Diplomate", cost: "3" },
   ];
-  let container = document.getElementById("container");
+  let container = document.getElementById("featured-rest");
   for (let i = 0; i < restaurants.length; i++) {
     let rest = document.createElement("div");
     rest.innerHTML = restaurants[i].name + " Cost: ";
