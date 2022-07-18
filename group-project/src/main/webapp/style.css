@@ -28,7 +28,8 @@ a {
 }
 
 .food {
-    width: 18.75rem;
+    width: 450px;
+    margin: 3rem;
 }
 
 .hero .textBox h1 {
