@@ -131,8 +131,9 @@ h2 {
 }
 
 #restaurants-cont img {
-    width: 6rem;
-    margin: 0.5rem;
+    width: 12em;
+    height: 12em;
+    margin: 2em;
 }
 
 .restaurant div div {
