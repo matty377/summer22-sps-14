@@ -18,10 +18,10 @@ let map;
 //           will be executed after the Google Map API Async Script loads
 
 function initMap() {
-  //default location is Google headquarters
+  //default location is Times Square NYC
   let location = {
-    lat: 37.419857,
-    lng: -122.078827,
+    lat:  40.758896,
+    lng: -73.985130,
   };
 
   let mapOptions = {
