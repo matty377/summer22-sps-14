@@ -141,7 +141,7 @@ h2 {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
-#container div {
+#featured-rest div {
   display: flex;
   font-family: Roboto;
   background-color: #fff;
@@ -154,7 +154,7 @@ h2 {
   transition-duration: 1s;
 }
 
-#featured div:hover {
+#featured-rest div:hover {
   background-color: #dee1e6;
 }
 
