@@ -32,69 +32,52 @@
     </a>
   </div>
 
-  <!-- Hero -->
-  <div class="px-4 pt-5 my-5 text-center">
-    <h1 class="display-4 fw-bold">What To Eat?</h1>
-    <div class="row">
-      <div class="col">
-        <div class="textBox">
-          <h1><span>W</span>here <span>t</span>o <span>E</span>at?</h1>
-          <p>Eat the right <span>FOOD</span></p>
-          <p>At the right <span>PLACE</span></p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="imgBox">
-          <img src="img/img1.png" alt="food img 1" class="food">
+    <!-- Hero -->
+    <div class="hero container-fluid">
+        <div class="row align-items-center">
+            <div class="textBox col-md-6">
+                <h1><span>W</span>hat <span>t</span>o <span>E</span>at?</h1>
+                <h1><span>W</span>here <span>t</span>o <span>E</span>at?</h1>
+                <p>Eat the right <span>FOOD</span></p>
+                <p>At the right <span>PLACE</span></p>
+            </div>
+            <div class="imgBox col-md-6 d-flex">
+                <img src="img/img1.png" alt="food img 1" class="food">
+            </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 mx-auto">
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <ul class="thumbnail">
-          <li><img src="img/img1.png" alt="food1" onclick="imgSlider('img/img1.png')"></li>
-          <li><img src="img/img2.png" alt="food2" onclick="imgSlider('img/img2.png')"></li>
-          <li><img src="img/img3.png" alt="food3" onclick="imgSlider('img/img3.png')"></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <hr/>
 
-  <!-- Food Suggestion -->
-  <div class="suggestion">
-    <h2>What Should We Eat?</h2>
-    <p style="color:#D9D9D9">Click this button for a suggestion.</p>
-    <button id="suggestion-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
-    <div id="suggestion-container"
-         style="font-family: 'Playfair Display', sans-serif; letter-spacing: 1.5px; color: #EA7C69; font-size: 2em"></div>
+    <ul class="thumbnail d-flex flex-wrap">
+        <li><img src="img/img1.png" alt="food1" onclick="imgSlider('img/img1.png')"></li>
+        <li><img src="img/img2.png" alt="food2" onclick="imgSlider('img/img2.png')"></li>
+        <li><img src="img/img3.png" alt="food3" onclick="imgSlider('img/img3.png')"></li>
+    </ul>
+
+    <!-- Food Suggestion -->
+    <div class="suggestion">
+        <h2>What Should We Eat?</h2>
+        <p style="color:#D9D9D9">Click this button for a suggestion.</p>
+        <button class="big-btn" onclick="addFoodSuggestion()">WTE - IDEA</button>
+        <div id="suggestion-container" style="font-family: 'Playfair Display', sans-serif; letter-spacing: 1.5px; color: #EA7C69; font-size: 2em; margin: 20px auto 40px"></div>
+    </div>
   </div>
-  <hr/>
 
   <!-- Map -->
   <div class="container">
     <h2>Where Should We Eat?</h2>
-    <p style="color:#D9D9D9 ;text-align:center">Enter your location and a keyword below to
-      search
-      for
-      3 nearby restaurants.</p>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <span style="color:white"><i class="fa-solid fa-street-view fa-xl"
-                                         id="location-icon"></i></span>
-            <input type="text" placeholder="Enter your location" id="search-input"/>
-          </div>
+    <p style="color:#D9D9D9 ;text-align:center">Enter your location and a keyword below to search for 3 nearby restaurants.</p>
+    <div id="input-container">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <span style="color:white"><i class="fa-solid fa-street-view fa-xl" id="location-icon"></i></span>
+                <input type="text" placeholder="Enter your location" id="search-input" />
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <span style="color:white"><i class="fa-solid fa-face-smile-wink fa-xl"></i></span>
+                <input type="text" id="keyword" placeholder="Enter a keyword">
+            </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-auto">
-                    <span style="color:white"><i
-                        class="fa-solid fa-face-smile-wink fa-xl"></i></span>
-            <input type="text" id="keyword" placeholder="Enter a keyword">
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -102,23 +85,23 @@
 
   <!-- Display Restaurants -->
   <div id="restaurants-cont"></div>
-  <hr/>
 
-  <!-- List map protoype html-->
-  <h1>Featured Restaurants</h1>
-  <div id="featured"></div>
+    <!-- List map protoype html-->
+    <h2>Featured Restaurants</h2>
+    <div id="featured-rest"></div>
 
-  <!-- Register a new restaurant -->
-  <p><a href="/newRestaurant.html">add restaurant</a></p>
-  <hr/>
-
-  <!--Feedback-->
-  <div class="container">
-    <div class="row justify-content-center">
-      <h1>Enjoying Our App?</h1>
-      <form action="/feedback" method="POST">
-        <div class="row justify-content-center">
-          <div class="form-group col-auto">
+    <!-- Register a new restaurant -->
+    <div style="margin: 50px 0; text-align:center">
+        <h2>Think of something different?</h2>
+        <p style="color:#D9D9D9">Click the button below to add your favorite restaurant!</p>
+        <button class="big-btn" onclick="window.location.href='/newRestaurant.html'">ADD RESTAURANT</button>
+    </div>
+        
+    <!--Feedback-->
+      <div class="container" style="width: 60%">
+        <h2>Enjoying Our App?</h2>
+        <form action="/feedback" method="POST">
+          <div class="form-group">
             <label for="name" class="form-label">Name</label>
             <input name="name" type="text" class="form-control"
                    id="name" aria-describedby="name">

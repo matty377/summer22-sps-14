@@ -16,7 +16,7 @@ a {
 #logo-img {
     position: relative;
     width: 100px;
-    padding: 30px;
+    margin: 20px;
 }
 /* Hero */
 .hero {
@@ -28,13 +28,15 @@ a {
 }
 
 .food {
-    width: 18.75rem;
+    width: 450px;
+    margin: 3rem;
 }
 
 .hero .textBox h1 {
     font-size: 4em;
     Line-height: 1em;
     font-weight: 500;
+    margin: 25px 0;
 }
 
 .hero .textBox p {
@@ -82,7 +84,7 @@ a {
     text-align:center;
 }
 
-#suggestion-btn {
+.big-btn {
     background-color: transparent;
     border: 2px solid;
     color: #EA7C69;
@@ -95,7 +97,7 @@ a {
     transition: all 0.3s;
 }
 
-#suggestion-btn:hover{
+.big-btn:hover{
     border-color: #f1ff5c;
     color: white;
     box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
@@ -115,10 +117,11 @@ h2 {
     align-items: center;
     background-color: transparent;
     /* color: white !important; */
-    border: 0.0625rem solid #D9D9D9;
-    border-radius: 0.94rem;
-    width: 70%;
-    margin: 1.5rem auto;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 65%;
+    margin: 30px auto;
+    padding: 10px;
     transition: all 0.3s;
 }
 
@@ -128,8 +131,9 @@ h2 {
 }
 
 #restaurants-cont img {
-    width: 6rem;
-    margin: 0.5rem;
+    width: 12em;
+    height: 12em;
+    margin: 2em;
 }
 
 .restaurant div div {
@@ -140,27 +144,70 @@ h2 {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
-#heading {
+#featured-rest div {
   display: flex;
-  font-family: Roboto;
-  /* color: #3e4958; */
-  justify-content: center;
-  font-size: 36px;
-  font-weight: 900;
-}
-
-#featured {
   font-family: Roboto;
   background-color: #fff;
   font-weight: 700;
   color: #3e4958;
-  margin: 1rem 1rem;
-  padding: 1rem 1rem;
+  text-align: center;
+  width: 50%;
+  margin: 1em auto;
+  padding: 3em 2em;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 1em;
   transition-duration: 1s;
 }
 
-#featured div:hover {
+#featured-rest div:hover {
   background-color: #dee1e6;
+}
+
+input {
+  width: 30em;
+  height: 30px;
+  margin: 15px 30px 15px 10px ;
+}
+
+#input-container {
+  margin: 1em 3em;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .food {
+        width: 300px;
+        margin: 30px auto;
+    }
+
+    .hero .textBox h1 {
+        font-size: 2.5em;
+        Line-height: 1em;
+        font-weight: 500;
+        margin: 25px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .textBox {
+        text-align: center;
+    }
+    .thumbnail li {
+        margin: 1em;
+    }
+
+    #restaurants-cont img {
+        width: 7em;
+        height: 7em;
+        margin: 20px;
+    }
+
+    #restaurants-cont div {
+        font-size: x-small;
+    }
+
+    #restaurants-cont div h3 {
+        font-size: small;
+    }
+
 }
