@@ -19,10 +19,10 @@ let map;
 //           will be executed after the Google Map API Async Script loads
 
 function initMap() {
-  //default location is Google headquarters
+  //default location is Times Square NYC
   let location = {
-    lat: 37.419857,
-    lng: -122.078827,
+    lat:  40.758896,
+    lng: -73.985130,
   };
 
   let locationRest = location;
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     { name: "Joe’s Seafood", cost: "2" },
     { name: "Le Diplomate", cost: "3" },
   ];
-  let container = document.getElementById("featured");
+  let container = document.getElementById("featured-rest");
   for (let i = 0; i < restaurants.length; i++) {
     let rest = document.createElement("div");
     rest.innerHTML = restaurants[i].name + " Cost: ";
