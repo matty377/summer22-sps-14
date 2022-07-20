@@ -14,6 +14,7 @@
 
 let map;
 
+
 //initMap(): is a callback function,
 //           will be executed after the Google Map API Async Script loads
 
@@ -23,6 +24,8 @@ function initMap() {
     lat:  40.758896,
     lng: -73.985130,
   };
+
+  let locationRest = location;
 
   let mapOptions = {
     center: location,
@@ -90,9 +93,58 @@ function initMap() {
                 center: location,
                 zoom: 12
         });
+        console.log("location entered: " + location);
         createMarker(location,map);
+        
+        
+        
     }
   });
+    
+
+  //Function to ask a servlet and datastore for restaurants of a certain type of food 
+  //and if there are in bounds from the center, aproximately 10 km radius
+    
+  let getRestP = function getRestPost(foodType, location){
+    let bounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(location.lat()-0.1,location.lng()-0.1),
+        new google.maps.LatLng(location.lat()+0.1,location.lng()+0.1)
+    );
+    fetch("/get-rest", {
+        method: 'POST', // or 'PUT'
+        body: foodType, // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'text/plain'
+        }
+      }).then((response) => response.json())
+      .then((restaurants) => {
+        if(restaurants){
+            let restContainer = document.getElementById('DSrestaurants-cont');
+            restContainer.innerHTML = '<h2>User Suggested Restaurants Near You</h2>';
+        }
+        restaurants.forEach((restaurant) => {
+            //If the restaurant is in bounds it will be showed
+            if(bounds.contains(new google.maps.LatLng(restaurant.latitude,restaurant.longitude))){
+                console.log(restaurant);
+
+                //Add DataStore restaurant to the container if its in bounds
+                let contentString = `<div style="color:black">`+
+                `<h3>${restaurant.name}</h3>` +
+                `<p>Address: ${restaurant.location}</p>` +
+                `<p>Price Level: ${restaurant.cost}/10</p>` +
+                `<p>Type: ${restaurant.type} </p>`+
+                `</div>`;
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('restaurant');
+                document.querySelector('#DSrestaurants-cont').appendChild(newDiv);
+                let infoBox = document.createElement('div');
+                infoBox.innerHTML = contentString;
+                newDiv.appendChild(infoBox);
+            }
+        });
+      });
+}
+
 
   const keywordInput = document.getElementById('keyword');
   keywordInput.addEventListener('change', (e) => {
@@ -115,7 +167,10 @@ function initMap() {
       request.keyword = keywordInput.value;
       let service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
+
+      getRestP(keywordInput.value, location);
       keywordInput.value = '';
+    
   });
   
 }
@@ -256,14 +311,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     container.appendChild(rest);
   }
 
-  function getRestaurant() {
-    fetch("/get-rest")
-      .then((response) => response.json())
-      .then((restaurants) => {
-        restaurants.forEach((restaurant) => {
-          //taskListElement.appendChild(createTaskElement(task));
-          console.log(restaurant);
-        });
-      });
-  }
 });
+
+
+
+
